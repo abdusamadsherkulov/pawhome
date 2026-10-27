@@ -3,7 +3,7 @@ import { and, arrayContains, asc, count, desc, ilike, lte, ne, or, eq, SQL } fro
 import { z } from 'zod';
 import { db } from '../db';
 import { pets, SPECIES, STATUSES, TAGS, users } from '../db/schema';
-import {telegramField} from '../utils/validators';
+import { telegramField } from '../utils/validators';
 
 const photoUrls = z.array(z.string().regex(/^\/api\/images\/[0-9a-f-]{36}$/)).max(6);
 
@@ -24,6 +24,7 @@ const petSchema = z.object({
     contactPhone: z.string().trim().min(5).max(30),
     telegram: telegramField.optional(),
     tags: z.array(z.enum(TAGS)).max(6).default([]),
+    photos: photoUrls.default([]),
 });
 
 export async function createPet(req: Request, res: Response) {
