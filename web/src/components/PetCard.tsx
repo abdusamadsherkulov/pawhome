@@ -10,9 +10,9 @@ export default function PetCard({ pet }: { pet: Pet }) {
       <Link href={`/pets/${pet.id}`} className="block">
         {pet.photos[0] ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={photoUrl(pet.photos[0], 600)} alt={pet.name} className="h-44 w-full bg-sand object-cover" />
+          <img src={photoUrl(pet.photos[0], 600)} alt={pet.name} className="aspect-[4/3] w-full bg-sand object-cover object-[50%_25%]" />
         ) : (
-          <div className="flex h-44 items-center justify-center bg-sage-soft text-7xl">
+          <div className="flex aspect-[4/3] items-center justify-center bg-sage-soft text-7xl">
             {speciesEmoji[pet.species]}
           </div>
         )}

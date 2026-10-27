@@ -22,7 +22,7 @@ export default function PhotoGallery({ photos, name, emoji }: Props) {
             <img
                 src={photoUrl(photos[current], 1200)}
                 alt={name}
-                className="h-72 w-full rounded-3xl bg-sand object-cover md:h-96"
+                className="max-h-[32rem] w-full rounded-3xl bg-sand object-contain"
             />
 
             {photos.length > 1 && (
