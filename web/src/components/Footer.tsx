@@ -24,7 +24,8 @@ export default async function Footer() {
         </div>
       </div>
       <div className="border-t border-line py-4 text-center text-xs text-muted">
-        © {new Date().getFullYear()} PawHome
+        © {new Date().getFullYear()} PawHome | 
+        Built by <a href="https://sam-sherkulov-portfolio.vercel.app/" target="_blank" rel="noreferrer" className="text-neutral-600 hover:text-neutral-900">Sam Sherkulov</a>
       </div>
     </footer>
   );
